@@ -4,6 +4,11 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/ui/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/gestionDesResponsablesRH/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/gestionDesCandidats/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/gestionDesRecruteurs/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/correctionAutomatiqueDesTestsTechniques/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/gestionDesTestsTechniques/pom.xml" />
       </list>
     </option>
   </component>

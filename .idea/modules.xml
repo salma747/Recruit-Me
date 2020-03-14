@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/main/correctionAutomatiqueDesTestsTechniques/correctionAutomatiqueDesTestsTechniques.iml" filepath="$PROJECT_DIR$/src/main/correctionAutomatiqueDesTestsTechniques/correctionAutomatiqueDesTestsTechniques.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/gestionDesCandidats/gestionDesCandidats.iml" filepath="$PROJECT_DIR$/src/main/gestionDesCandidats/gestionDesCandidats.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/gestionDesRecruteurs/gestionDesRecruteurs.iml" filepath="$PROJECT_DIR$/src/main/gestionDesRecruteurs/gestionDesRecruteurs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/gestionDesResponsablesRH/gestionDesResponsablesRH.iml" filepath="$PROJECT_DIR$/src/main/gestionDesResponsablesRH/gestionDesResponsablesRH.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/gestionDesTestsTechniques/gestionDesTestsTechniques.iml" filepath="$PROJECT_DIR$/src/main/gestionDesTestsTechniques/gestionDesTestsTechniques.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/main/ui/ui.iml" filepath="$PROJECT_DIR$/src/main/ui/ui.iml" />
     </modules>

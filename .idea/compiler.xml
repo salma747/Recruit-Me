@@ -6,10 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gestionDesTestsTechniques" />
         <module name="ui" />
+        <module name="gestionDesRecruteurs" />
+        <module name="correctionAutomatiqueDesTestsTechniques" />
+        <module name="gestionDesCandidats" />
+        <module name="gestionDesResponsablesRH" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="correctionAutomatiqueDesTestsTechniques" target="1.5" />
+      <module name="gestionDeCandidats" target="1.5" />
+      <module name="gestionDesCandidats" target="1.5" />
+      <module name="gestionDesRecruteurs" target="1.5" />
+      <module name="gestionDesResponsablesRH" target="1.5" />
+      <module name="gestionDesTestsTechniques" target="1.5" />
       <module name="ui" target="1.5" />
     </bytecodeTargetLevel>
   </component>
