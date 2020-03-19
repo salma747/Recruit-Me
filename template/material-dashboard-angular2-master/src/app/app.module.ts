@@ -22,6 +22,11 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AddRecruteursComponent } from './add-recruteur/add-recruteurs.component';
+import { AddResprhComponent } from './add-resprh/add-resprh.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { ListRecruteursComponent } from './list-recruteurs/list-recruteurs.component';
+import { ListResprhComponent } from './list-resprh/list-resprh.component';
 
 @NgModule({
   imports: [
@@ -34,11 +39,16 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
+    MatFormFieldModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    AddRecruteursComponent,
+    AddResprhComponent,
+    ListRecruteursComponent,
+    ListResprhComponent,
 
   ],
   providers: [],
