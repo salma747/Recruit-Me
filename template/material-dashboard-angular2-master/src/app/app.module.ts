@@ -13,6 +13,10 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
+import { AddRecruteursComponent } from './add-recruteur/add-recruteurs.component';
+import { ListRecruteursComponent } from './list-recruteurs/list-recruteurs.component';
+import { AddResprhComponent } from './add-resprh/add-resprh.component';
+import { ListResprhComponent } from './list-resprh/list-resprh.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
@@ -22,6 +26,8 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   imports: [
@@ -34,11 +40,16 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
+    MatFormFieldModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    //AddRecruteursComponent,
+    //AddResprhComponent,
+    //ListRecruteursComponent,
+    //ListResprhComponent,
 
   ],
   providers: [],
