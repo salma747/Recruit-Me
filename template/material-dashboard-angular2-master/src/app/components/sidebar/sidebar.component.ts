@@ -11,7 +11,11 @@ export const ROUTES: RouteInfo[] = [
    // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: '/user-profile', title: 'Ajout Candidat',  icon:'person', class: '' },
     { path: '/table-list', title: 'Liste Des Candidats',  icon:'content_paste', class: '' },
-    //{ path: '/add-recruteur', title: 'Recruteur',  icon:'person', class: '' },
+    { path: '/add-recruteur', title: 'Ajout Recruteur',  icon:'person', class: '' },
+    { path: '/list-recruteurs', title: 'Liste Des Recruteurs',  icon:'content_paste', class: '' },
+    { path: '/add-resprh', title: 'Ajout Responsable RH',  icon:'person', class: '' },
+    { path: '/list-resprh', title: 'Liste Des Responsable RH',  icon:'content_paste', class: '' },
+
     //{ path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     //{ path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
     //{ path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },

@@ -13,6 +13,10 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
+import { AddRecruteursComponent } from './add-recruteur/add-recruteurs.component';
+import { ListRecruteursComponent } from './list-recruteurs/list-recruteurs.component';
+import { AddResprhComponent } from './add-resprh/add-resprh.component';
+import { ListResprhComponent } from './list-resprh/list-resprh.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
@@ -22,11 +26,8 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { AddRecruteursComponent } from './add-recruteur/add-recruteurs.component';
-import { AddResprhComponent } from './add-resprh/add-resprh.component';
+
 import {MatFormFieldModule} from "@angular/material/form-field";
-import { ListRecruteursComponent } from './list-recruteurs/list-recruteurs.component';
-import { ListResprhComponent } from './list-resprh/list-resprh.component';
 
 @NgModule({
   imports: [
@@ -45,10 +46,10 @@ import { ListResprhComponent } from './list-resprh/list-resprh.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AddRecruteursComponent,
-    AddResprhComponent,
-    ListRecruteursComponent,
-    ListResprhComponent,
+    //AddRecruteursComponent,
+    //AddResprhComponent,
+    //ListRecruteursComponent,
+    //ListResprhComponent,
 
   ],
   providers: [],
