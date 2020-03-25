@@ -3,4 +3,16 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/recruit-me-ui/pom.xml" />
+        <option value="$PROJECT_DIR$/gestion-des-candidats/pom.xml" />
+        <option value="$PROJECT_DIR$/gestion-des-recruteurs/pom.xml" />
+        <option value="$PROJECT_DIR$/gestion-des-responsables-ressources-humains/pom.xml" />
+        <option value="$PROJECT_DIR$/gestion-des-tests-techniques/pom.xml" />
+        <option value="$PROJECT_DIR$/gestion-des-droits-d-accès/pom.xml" />
+      </list>
+    </option>
+  </component>
 </project>

@@ -6,16 +6,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="recruit-me-ui" />
+        <module name="gestionnaire-des-tests-techniques" />
+        <module name="gestionnaire-des-responsables-ressources-humains" />
+        <module name="gestionnaire-des-recruteurs" />
         <module name="Recruit-me" />
+        <module name="gestionnaire-des-candidats" />
+        <module name="gestionnaire-des-droits-d-acces" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="correction-automatique-des-tests-techniques" target="1.5" />
+      <module name="gestionnaire-des-candidats" target="1.5" />
+      <module name="gestionnaire-des-droits-d-acces" target="1.8" />
+      <module name="gestionnaire-des-recruteurs" target="1.5" />
+      <module name="gestionnaire-des-responsables-ressources-humains" target="1.5" />
+      <module name="gestionnaire-des-tests-techniques" target="1.5" />
       <module name="Recruit-me" target="1.8" />
+      <module name="recruit-me-ui" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Recruit-me" options="-parameters" />
+      <module name="gestionnaire-des-droits-d-acces" options="-parameters" />
     </option>
   </component>
 </project>
