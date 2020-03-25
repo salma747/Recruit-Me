@@ -15,12 +15,16 @@ import { ListResprhComponent } from '../../list-resprh/list-resprh.component';
 //import { MapsComponent } from '../../maps/maps.component';
 //import { NotificationsComponent } from '../../notifications/notifications.component';
 //import { UpgradeComponent } from '../../upgrade/upgrade.component';
+
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import {AdminLayoutComponent} from "./admin-layout.component";
+import {ComponentsModule} from "../../components/components.module";
 
 @NgModule({
   imports: [
@@ -34,6 +38,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    ComponentsModule,
   ],
   declarations: [
     //DashboardComponent,
@@ -43,6 +48,7 @@ import {MatSelectModule} from '@angular/material/select';
     AddResprhComponent,
     ListRecruteursComponent,
     ListResprhComponent,
+    AdminLayoutComponent,
     //IconsComponent,
     //MapsComponent,
     //NotificationsComponent,

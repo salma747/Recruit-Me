@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthenticationService} from "../../login/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -14,13 +15,20 @@ export class NavbarComponent implements OnInit {
       mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
+    isLoggedIn = false;
 
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+    constructor(private route: ActivatedRoute,
+                private authenticationService: AuthenticationService,
+                location: Location,
+                private element: ElementRef,
+                private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
+        this.isLoggedIn = this.authenticationService.isUserLoggedIn();
+        console.log('menu ->' + this.isLoggedIn);
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
@@ -34,6 +42,9 @@ export class NavbarComponent implements OnInit {
      });
     }
 
+    handleLogout() {
+        this.authenticationService.logout();
+    }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];

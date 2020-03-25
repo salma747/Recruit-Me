@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from './auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,17 +9,30 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(){ }
+  username: string;
+  password : string;
+  errorMessage = 'Invalid Credentials';
+  successMessage: string;
+  invalidLogin = false;
+  loginSuccess = false;
 
-  ngOnInit(): void {
+  constructor(
+      private route: ActivatedRoute,
+      private router: Router,
+      private authenticationService: AuthenticationService) {   }
+
+  ngOnInit() {
   }
 
-//./layouts/admin-layout/admin-layout.module#AdminLayoutModule
-
-
-  login() {
-    // @ts-ignore
-    //this.router.navigateByUrl('./layouts/admin-layout/admin-layout.module#AdminLayoutModule');
-
+  handleLogin() {
+    this.authenticationService.authenticationService(this.username, this.password).subscribe((result)=> {
+      this.invalidLogin = false;
+      this.loginSuccess = true;
+      this.successMessage = 'Login Successful.';
+      this.router.navigate(['/recruit-me']);
+    }, () => {
+      this.invalidLogin = true;
+      this.loginSuccess = false;
+    });
   }
 }

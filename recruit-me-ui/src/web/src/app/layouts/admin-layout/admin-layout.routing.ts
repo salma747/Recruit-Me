@@ -8,6 +8,7 @@ import { ListRecruteursComponent } from '../../list-recruteurs/list-recruteurs.c
 import { AddResprhComponent } from '../../add-resprh/add-resprh.component';
 import { ListResprhComponent } from '../../list-resprh/list-resprh.component';
 import { IconsComponent } from '../../icons/icons.component';
+//import {DashboardComponent} from "../../dashboard/dashboard.component";
 //import { MapsComponent } from '../../maps/maps.component';
 //import { NotificationsComponent } from '../../notifications/notifications.component';
 //import { UpgradeComponent } from '../../upgrade/upgrade.component';
@@ -55,14 +56,13 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-  //  { path: 'dashboard',      component: DashboardComponent },
+   // { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'add-recruteur',     component: AddRecruteursComponent },
     { path: 'list-recruteurs',     component: ListRecruteursComponent },
     { path: 'add-resprh',     component: AddResprhComponent },
-    { path: 'list-resprh',     component: ListResprhComponent },
-
+    { path: 'list-resprh',     component: ListResprhComponent }
 
     //{ path: 'icons',          component: IconsComponent },
     //{ path: 'maps',           component: MapsComponent },

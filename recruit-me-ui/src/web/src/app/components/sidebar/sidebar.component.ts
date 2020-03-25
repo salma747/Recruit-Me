@@ -10,11 +10,11 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
    // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
    // { path: '/user-profile', title: 'Ajout Candidat',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Gestion Des Candidats',  icon:'content_paste', class: '' },
+    { path: '/recruit-me/table-list', title: 'Gestion Des Candidats',  icon:'content_paste', class: '' },
     // { path: '/add-recruteur', title: 'Ajout Recruteur',  icon:'person', class: '' },
-    { path: '/list-recruteurs', title: 'Gestion Des Recruteurs',  icon:'content_paste', class: '' },
+    { path: '/recruit-me/list-recruteurs', title: 'Gestion Des Recruteurs',  icon:'content_paste', class: '' },
    // { path: '/add-resprh', title: 'Ajout Responsable RH',  icon:'person', class: '' },
-    { path: '/list-resprh', title: 'Gestion Des ResponsablesRH',  icon:'content_paste', class: '' },
+    { path: '/recruit-me/list-resprh', title: 'Gestion Des ResponsablesRH',  icon:'content_paste', class: '' },
 
     //{ path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     //{ path: '/maps', title: 'Maps',  icon:'location_on', class: '' },

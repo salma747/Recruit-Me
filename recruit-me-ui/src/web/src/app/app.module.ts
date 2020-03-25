@@ -22,12 +22,18 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+
+
+import { HttpInterceptorService } from './httpInterceptor.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -37,7 +43,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     HttpModule,
     ComponentsModule,
     RouterModule,
+    HttpClientModule,
     AppRoutingModule,
+
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
@@ -45,14 +53,20 @@ import {MatFormFieldModule} from "@angular/material/form-field";
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
+    LoginComponent,
     //AddRecruteursComponent,
     //AddResprhComponent,
     //ListRecruteursComponent,
     //ListResprhComponent,
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
