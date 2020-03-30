@@ -1,4 +1,4 @@
-package net.javaguides.springboot.helloworldapp.config;
+package tn.iit.fod.login.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

@@ -1,10 +1,10 @@
-package net.javaguides.springboot.helloworldapp.bean;
+package tn.iit.fod.login.model;
 
-public class AuthenticationBean {
+public class Authentication {
 
 	private String message;
 
-	public AuthenticationBean(String message) {
+	public Authentication(String message) {
 		this.message = message;
 	}
 
@@ -18,7 +18,7 @@ public class AuthenticationBean {
 
 	@Override
 	public String toString() {
-		return String.format("HelloWorldBean [message=%s]", message);
+		return String.format(" [message=%s]", message);
 	}
 
 }
