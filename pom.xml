@@ -9,11 +9,19 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.iit.FOD.Recruitme</groupId>
-	<artifactId>Recruit-me</artifactId>
+	<artifactId>recruit-me</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Recruitme</name>
+	<name>recruit-me</name>
 	<description>Demo project for Spring Boot</description>
-
+	<packaging>pom</packaging>
+	<modules>
+		<module>recruit-me-ui</module>
+		<module>gestionnaire-des-candidats</module>
+		<module>gestionnaire-des-droits-d-acces</module>
+		<module>gestionnaire-des-recruteurs</module>
+		<module>gestionnaire-des-responsables-ressources-humains</module>
+		<module>gestionnaire-des-tests-techniques</module>
+	</modules>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
