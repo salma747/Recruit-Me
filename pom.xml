@@ -8,7 +8,7 @@
 		<version>2.2.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.iit.FOD.Recruitme</groupId>
+	<groupId>com.iit.fod.recruitme</groupId>
 	<artifactId>recruit-me</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>recruit-me</name>
@@ -19,7 +19,7 @@
 		<module>gestionnaire-des-candidats</module>
 		<module>gestionnaire-des-droits-d-acces</module>
 		<module>gestionnaire-des-recruteurs</module>
-		<module>gestionnaire-des-responsables-ressources-humains</module>
+		<module>gestionnaire-des-responsables-ressources-humaines</module>
 		<module>gestionnaire-des-tests-techniques</module>
 	</modules>
 	<properties>

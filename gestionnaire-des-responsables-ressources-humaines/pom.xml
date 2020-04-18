@@ -8,10 +8,11 @@
         <groupId>com.iit.fod.recruitme</groupId>
         <artifactId>recruit-me</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.iit.fod.recruitme.ui</groupId>
-    <artifactId>recruit-me-ui</artifactId>
+    <groupId>com.iit.fod.recruitme.gestion.des.resp.rh</groupId>
+    <artifactId>gestionnaire-des-responsables-ressources-humaines</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     

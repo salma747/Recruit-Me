@@ -5,12 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.iit.FOD.Recruitme</groupId>
-        <artifactId>Recruit-me</artifactId>
+        <groupId>com.iit.fod.recruitme</groupId>
+        <artifactId>recruit-me</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.iit.FOD.Recruitme.gestionnaire.des.recruteurs.des.droits.d.acces</groupId>
+    <groupId>com.iit.fod.Recruitme.gestionnaire.des.recruteurs.des.droits.d.acces</groupId>
     <artifactId>gestionnaire-des-droits-d-acces</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
