@@ -36,6 +36,22 @@
                                     Action
                                 </th>
                                 </thead>
+                                <tbody>
+                                <tr *ngFor="let recruteur of recruteur">
+                                    <td>{{recruteur.id}}</td>
+                                    <td>{{recruteur.nomUtilisateur}}</td>
+                                    <td>{{recruteur.adresseEmail}}</td>
+                                    <td>{{recruteur.motpasse}}</td>
+                                    <td>{{recruteur.nom}}</td>
+                                    <td>{{recruteur.prenom}}</td>
+                                    <td>{{recruteur.dateNaissance}}</td>
+                                    <td>{{recruteur.adresse}}</td>
+                                    <td>{{recruteur.posteActuel}}</td>
+
+                                    <td>
+                                        <button [routerLink]="['/update-recruteur/'+recruteur.id]"  mat-raised-button >Modifier</button>
+
+                                        <button (click)="deleteRecruteur(recruteur.id)" class="btn btn-danger">Supprimer</button></td>
                             </table>
                         </div>
                     </div>

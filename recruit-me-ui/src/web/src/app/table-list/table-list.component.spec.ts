@@ -10,7 +10,7 @@ describe('TableListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ TableListComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   }));
 
   beforeEach(() => {

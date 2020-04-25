@@ -1,8 +1,6 @@
 package tn.iit.fod.recruteurmodel;
 
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 @Document(indexName = "recruteur", type = "default")
@@ -17,8 +15,8 @@ public class Recruteur {
     private String nom;
     private String prenom;
     private String dateNaissance;
-    private String Adresse;
-    private String PosteActuel;
+    private String adresse;
+    private String posteActuel;
 
 
     public String getId() {
@@ -78,19 +76,19 @@ public class Recruteur {
     }
 
     public String getAdresse() {
-        return Adresse;
+        return adresse;
     }
 
     public void setAdresse(String adresse) {
-        Adresse = adresse;
+        adresse = adresse;
     }
 
     public String getPosteActuel() {
-        return PosteActuel;
+        return posteActuel;
     }
 
     public void setPosteActuel(String posteActuel) {
-        PosteActuel = posteActuel;
+        posteActuel = posteActuel;
     }
 
     public Recruteur(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse, String posteActuel) {
@@ -102,8 +100,8 @@ public class Recruteur {
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
-        Adresse = adresse;
-        PosteActuel = posteActuel;
+        this.adresse = adresse;
+        this.posteActuel = posteActuel;
     }
     public Recruteur(){}
 }

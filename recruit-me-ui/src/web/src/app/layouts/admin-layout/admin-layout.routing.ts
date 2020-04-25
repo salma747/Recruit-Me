@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 
 //import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
+import { AddCandidatComponent } from '../../add-candidat/add-candidat.component';
+import { UpdateCandidatComponent } from '../../update-candidat/update-candidat.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { AddRecruteursComponent } from '../../add-recruteur/add-recruteurs.component';
 import { ListRecruteursComponent } from '../../list-recruteurs/list-recruteurs.component';
@@ -56,13 +57,16 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-   // { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
+    // { path: 'dashboard',      component: DashboardComponent },
+    // { path: 'user-profile',   component: UserProfileComponent },
+    { path: 'update-candidat',     component: UpdateCandidatComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'add-recruteur',     component: AddRecruteursComponent },
     { path: 'list-recruteurs',     component: ListRecruteursComponent },
     { path: 'add-resprh',     component: AddResprhComponent },
     { path: 'list-resprh',     component: ListResprhComponent }
+
+
 
     //{ path: 'icons',          component: IconsComponent },
     //{ path: 'maps',           component: MapsComponent },

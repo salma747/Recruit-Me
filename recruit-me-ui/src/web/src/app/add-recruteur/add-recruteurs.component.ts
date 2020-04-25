@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { recruteur } from '../recruteur';
+import {RecruteurService} from "../recruteur.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-recruteurs',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddRecruteursComponent implements OnInit {
 
-  constructor() { }
+  recruteur: recruteur = new recruteur();
+  submitted = false;
 
-  ngOnInit(): void {
+  constructor(private recruteurService: RecruteurService,
+              private router: Router) {
   }
 
+  ngOnInit() {
+  }
+
+  newRecruteur(): void {
+    this.submitted = false;
+    this.recruteur = new recruteur();
+  }
+
+  add() {
+    this.recruteurService.addRecruteur(this.recruteur)
+        .subscribe(data => this.recruteur = new recruteur(), error => console.log(error));
+
+    this.gotoList();
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.add();
+  }
+
+  gotoList() {
+    this.router.navigate(['/recruteur']);
+  }
 }

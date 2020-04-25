@@ -23,6 +23,22 @@
                                     Action
                                 </th>
                                 </thead>
+                                <tbody>
+                                <tr *ngFor="let responsableRH of responsablesRH">
+                                    <td>{{responsableRH.id}}</td>
+                                    <td>{{responsableRH.nomUtilisateur}}</td>
+                                    <td>{{responsableRH.adresseEmail}}</td>
+                                    <td>{{responsableRH.motpasse}}</td>
+                                    <td>{{responsableRH.nom}}</td>
+                                    <td>{{responsableRH.prenom}}</td>
+                                    <td>{{responsableRH.dateNaissance}}</td>
+                                    <td>{{responsableRH.adresse}}</td>
+                                    <td>
+                                        <button [routerLink]="['/update-resprh/'+responsableRH.id]"  mat-raised-button >Modifier</button>
+                                        <!-- <mat-icon [routerLink]="['/update-candidat/'+candidat.id]">update</mat-icon>-->
+
+                                        <button (click)="deleteResponsableRH(responsableRH.id)" class="btn btn-danger">Supprimer</button></td>
+                                    <!--  <mat-icon (click)="deleteCandidat(candidat.id)">delete</mat-icon> </td> -->
                             </table>
                         </div>
                     </div>

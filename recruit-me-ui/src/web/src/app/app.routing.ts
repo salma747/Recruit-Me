@@ -5,12 +5,23 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent} from "./login/login.component";
-import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { AddCandidatComponent } from "./add-candidat/add-candidat.component";
+import { UpdateCandidatComponent } from "./update-candidat/update-candidat.component";
+import {TableListComponent} from "./table-list/table-list.component";
+import { AddRecruteursComponent } from "./add-recruteur/add-recruteurs.component";
+import { UpdateRecruteurComponent } from "./update-recruteur/update-recruteur.component";
+import {ListRecruteursComponent} from "./list-recruteurs/list-recruteurs.component";
 
 const routes: Routes =[
   {path: 'login', component: LoginComponent},
   {path: '', component: LoginComponent},
-  {path: 'user-profile', component: UserProfileComponent}
+  {path: 'user-profile', component: AddCandidatComponent},
+  {path: 'candidats', component: TableListComponent},
+  {path: 'update-candidat/:id', component: UpdateCandidatComponent},
+  {path: 'add-recruteur', component: AddRecruteursComponent},
+  {path: 'recruteur', component: ListRecruteursComponent},
+  {path: 'update-recruteur/:id', component: UpdateRecruteurComponent}
+
   /*{
     path: '',
     redirectTo: 'dashboard',

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 //import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
+import { AddCandidatComponent } from '../../add-candidat/add-candidat.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { AddRecruteursComponent } from '../../add-recruteur/add-recruteurs.component';
 import { ListRecruteursComponent } from '../../list-recruteurs/list-recruteurs.component';
@@ -25,6 +25,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {AdminLayoutComponent} from "./admin-layout.component";
 import {ComponentsModule} from "../../components/components.module";
+import {UpdateCandidatComponent} from "../../update-candidat/update-candidat.component";
 
 @NgModule({
   imports: [
@@ -42,12 +43,13 @@ import {ComponentsModule} from "../../components/components.module";
   ],
   declarations: [
     //DashboardComponent,
-    UserProfileComponent,
-    TableListComponent,
-    AddRecruteursComponent,
-    AddResprhComponent,
-    ListRecruteursComponent,
-    ListResprhComponent,
+    // UpdateCandidatComponent,
+    // UserProfileComponent,
+    //TableListComponent,
+    //AddRecruteursComponent,
+    //AddResprhComponent,
+    //ListRecruteursComponent,
+    //ListResprhComponent,
     AdminLayoutComponent,
     //IconsComponent,
     //MapsComponent,

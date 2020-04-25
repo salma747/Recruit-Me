@@ -16,8 +16,7 @@ public class Responsable {
     private String prenom;
     private String dateNaissance;
     private String adresse;
-    private String diplome;
-    private String posteActuel;
+
 
     public String getId() {
         return id;
@@ -83,23 +82,8 @@ public class Responsable {
         this.adresse = adresse;
     }
 
-    public String getDiplome() {
-        return diplome;
-    }
 
-    public void setDiplome(String diplome) {
-        this.diplome = diplome;
-    }
-
-    public String getPosteActuel() {
-        return posteActuel;
-    }
-
-    public void setPosteActuel(String posteActuel) {
-        this.posteActuel = posteActuel;
-    }
-
-    public Responsable(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse, String diplome, String posteActuel) {
+    public Responsable(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse) {
         super();
        this.id = id;
         this.nomUtilisateur = nomUtilisateur;
@@ -109,8 +93,7 @@ public class Responsable {
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.adresse = adresse;
-        this.diplome = diplome;
-        this.posteActuel = posteActuel;
+
     }
     public Responsable(){}
 }

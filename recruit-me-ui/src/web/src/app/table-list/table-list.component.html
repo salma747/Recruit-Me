@@ -1,6 +1,6 @@
 <div class="main-content">
     <div class="container-fluid">
-        <button [routerLink]="['/recruit-me/user-profile']"  mat-raised-button >Ajouter candidat </button>
+        <button [routerLink]="['/add-candidat']"  mat-raised-button >Ajouter candidat </button>
 
         <div class="row">
             <div class="col-md-12">
@@ -41,6 +41,30 @@
                                     Action
                                 </th>
                                 </thead>
+                                <tbody>
+                                <tr *ngFor="let candidat of candidats">
+                                    <td>{{candidat.id}}</td>
+                                    <td>{{candidat.nomUtilisateur}}</td>
+                                    <td>{{candidat.adresseEmail}}</td>
+                                    <td>{{candidat.motpasse}}</td>
+                                    <td>{{candidat.nom}}</td>
+                                    <td>{{candidat.prenom}}</td>
+                                    <td>{{candidat.dateNaissance}}</td>
+                                    <td>{{candidat.adresse}}</td>
+                                    <td>{{candidat.diplome}}</td>
+                                    <td>{{candidat.nombreAnneeExperience}}</td>
+                                    <td>{{candidat.posteSouhaite}}</td>
+                                    <td>
+                                        <button [routerLink]="['/update-candidat/'+candidat.id]"  mat-raised-button >Modifier</button>
+                                       <!-- <mat-icon [routerLink]="['/update-candidat/'+candidat.id]">update</mat-icon>-->
+
+                                    <button (click)="deleteCandidat(candidat.id)" class="btn btn-danger">Supprimer</button></td>
+                                  <!--  <mat-icon (click)="deleteCandidat(candidat.id)">delete</mat-icon> </td> -->
+
+                                    <!-- <button (click)="candidatDetails(candidat.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                </td>-->
+                                </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>

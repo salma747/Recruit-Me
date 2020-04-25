@@ -6,31 +6,24 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tn.iit.fod.recruteurmodel.Recruteur;
 import tn.iit.fod.recruteurrepository.RecruteurRepository;
 
 @RestController
+@RequestMapping("recruteur")
 public class RecruteurController {
 
     @Autowired
     RecruteurRepository repository;
 
-    //@Bean
-    //ElasticsearchTemplate template;
 
-    @PostMapping("/recruteur/add")
+    @PostMapping("add")
     public Recruteur addRecruteur(@RequestBody Recruteur recruteur ){
         return repository.save(recruteur);
     }
 
-    @GetMapping("/recruteur/all")
+    @GetMapping("all")
     public List<Recruteur> getRecruteur(){
         Iterator<Recruteur> iterator= repository.findAll().iterator();
         List<Recruteur> recruteurs=new ArrayList<Recruteur>();
@@ -41,13 +34,13 @@ public class RecruteurController {
     }
 
 
-    @GetMapping("/recruteur/{id}")
+    @GetMapping("{id}")
     public Optional<Recruteur> getRecruteur(@PathVariable Integer id){
         return repository.findById(id);
     }
 
 
-    @PutMapping("/recruteur/{id}")
+    @PutMapping("{id}")
     public Recruteur updateRecruteur(@PathVariable Integer id,@RequestBody Recruteur recruteur){
         Optional<Recruteur> std= repository.findById(id);
         if(std.isPresent()){
@@ -59,7 +52,7 @@ public class RecruteurController {
             return null;
     }
 
-    @DeleteMapping("/recruteur/{id}")
+    @DeleteMapping("{id}")
     public String deleteRecruterur(@PathVariable Integer id){
         repository.deleteById(id);
         return "Document Deleted";

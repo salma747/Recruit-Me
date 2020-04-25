@@ -10,7 +10,7 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
+    <packaging>war</packaging>
     <groupId>com.iit.fod.recruitme.gestion.des.resp.rh</groupId>
     <artifactId>gestionnaire-des-responsables-ressources-humaines</artifactId>
     <version>0.0.1-SNAPSHOT</version>

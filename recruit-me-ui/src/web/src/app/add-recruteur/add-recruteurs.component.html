@@ -1,59 +1,59 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">Ajouter un recruteur</h4>
                         <p class="card-category">Ajouter les informations d'un nouveau recruteur</p>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form (submit)="onSubmit()">
                             <div class="row">
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Nom d'utilisateur"  type="text"><!--disabled -->
+                                        <input matInput name="nomUtilisateur" [(ngModel)]="recruteur.nomUtilisateur" placeholder="Nom d'utilisateur"  type="text">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Adresse Email" type="email">
+                                        <input matInput name="adresseEmail" [(ngModel)]="recruteur.adresseEmail" placeholder="Adresse Email" type="email">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Mot de passe" type="text">
+                                        <input matInput name="motpasse" [(ngModel)]="recruteur.motpasse" placeholder="Mot de passe" type="text">
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Nom"  type="text"><!--disabled -->
+                                        <input matInput name="nom" [(ngModel)]="recruteur.nom" placeholder="Nom"  type="text">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Prenom" type="text">
+                                        <input matInput name="prenom" [(ngModel)]="recruteur.prenom" placeholder="Prenom" type="text">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Date de Naissance" type="date">
-                                    </mat-form-field>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Adresse" type="text">
+                                        <input matInput name="dateNaissance" [(ngModel)]="recruteur.dateNaissance" placeholder="Date de Naissance" type="date">
                                     </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Poste Actuel" type="text">
+                                        <input matInput name="adresse" [(ngModel)]="recruteur.adresse" placeholder="Adresse" type="text">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput name="posteActuel" [(ngModel)]="recruteur.posteActuel" placeholder="Poste Actuel" type="text">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                  </div>
                              </div>-->
 
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Ajouter RECRUTEUR</button>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Ajouter Recruteur</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>

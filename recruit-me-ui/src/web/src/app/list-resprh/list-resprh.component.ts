@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ResprhService } from "../resprh.service";
+import {Router} from "@angular/router";
+import {resprh} from "../resprh";
 
 @Component({
   selector: 'app-list-resprh',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListResprhComponent implements OnInit {
 
-  constructor() { }
+  responsablesRH: resprh[];
 
-  ngOnInit(): void {
+  constructor(private resprhService: ResprhService,
+              private router: Router) { }
+
+  ngOnInit() {
+    this.reloadData();
   }
 
+  reloadData() {
+    this.resprhService.getAllResponsable().subscribe(data => this.responsablesRH = data);
+  }
+
+  deleteResponsable(id: number) {
+    this.resprhService.deleteResponsable(id)
+        .subscribe(
+            data => {
+              console.log(data);
+              this.reloadData();
+            },
+            error => console.log(error));
+  }
+
+
 }
+
