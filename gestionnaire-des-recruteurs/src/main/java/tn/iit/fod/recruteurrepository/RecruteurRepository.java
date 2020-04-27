@@ -7,6 +7,6 @@ import tn.iit.fod.recruteurmodel.Recruteur;
 
 
 @Repository
-public interface RecruteurRepository extends ElasticsearchRepository<Recruteur, Integer> {
+public interface RecruteurRepository extends ElasticsearchRepository<Recruteur, String> {
 
 }

@@ -1,13 +1,14 @@
 package tn.iit.fod.recruteurmodel;
 
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 @Document(indexName = "recruteur", type = "default")
 public class Recruteur {
 
 
-
+    @Id
     private String id;
     private String nomUtilisateur;
     private String adresseEmail;
@@ -91,17 +92,17 @@ public class Recruteur {
         posteActuel = posteActuel;
     }
 
-    public Recruteur(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse, String posteActuel) {
-        super();
-       this.id = id;
-        this.nomUtilisateur = nomUtilisateur;
-        this.adresseEmail = adresseEmail;
-        this.motpasse = motpasse;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.adresse = adresse;
-        this.posteActuel = posteActuel;
-    }
+//    public Recruteur(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse, String posteActuel) {
+//        super();
+//       this.id = id;
+//        this.nomUtilisateur = nomUtilisateur;
+//        this.adresseEmail = adresseEmail;
+//        this.motpasse = motpasse;
+//        this.nom = nom;
+//        this.prenom = prenom;
+//        this.dateNaissance = dateNaissance;
+//        this.adresse = adresse;
+//        this.posteActuel = posteActuel;
+//    }
     public Recruteur(){}
 }

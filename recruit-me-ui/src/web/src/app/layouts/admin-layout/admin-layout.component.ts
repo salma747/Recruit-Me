@@ -15,6 +15,7 @@ import * as $ from "jquery";
 export class AdminLayoutComponent implements OnInit {
   private _router: Subscription;
   private lastPoppedUrl: string;
+  private loginUrl= false;
   private yScrollStack: number[] = [];
 
   constructor( public location: Location, private router: Router) {}
@@ -36,6 +37,7 @@ export class AdminLayoutComponent implements OnInit {
           this.lastPoppedUrl = ev.url;
       });
        this.router.events.subscribe((event:any) => {
+
           if (event instanceof NavigationStart) {
              if (event.url != this.lastPoppedUrl)
                  this.yScrollStack.push(window.scrollY);
@@ -47,6 +49,7 @@ export class AdminLayoutComponent implements OnInit {
                  window.scrollTo(0, 0);
          }
       });
+
       this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
            elemMainPanel.scrollTop = 0;
            elemSidebar.scrollTop = 0;

@@ -8,5 +8,5 @@ import tn.iit.fod.responsablemodel.Responsable;
 
 
 @Repository
-public interface ResponsableRepository extends ElasticsearchRepository<Responsable, Integer> {
+public interface ResponsableRepository extends ElasticsearchRepository<Responsable, String> {
 }

@@ -96,7 +96,7 @@ material-dashboard-angular
 │   │   ├── app.component.spec.ts
 │   │   ├── app.component.ts
 │   │   ├── app.module.ts
-│   │   ├── app.routing.ts
+│   │   ├── app.routing.module.ts
 │   │   ├── components
 │   │   │   ├── components.module.ts
 │   │   │   ├── footer

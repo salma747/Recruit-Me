@@ -35,25 +35,30 @@ public class RecruteurController {
 
 
     @GetMapping("{id}")
-    public Optional<Recruteur> getRecruteur(@PathVariable Integer id){
+    public Optional<Recruteur> getRecruteur(@PathVariable String id){
         return repository.findById(id);
     }
 
 
     @PutMapping("{id}")
-    public Recruteur updateRecruteur(@PathVariable Integer id,@RequestBody Recruteur recruteur){
-        Optional<Recruteur> std= repository.findById(id);
-        if(std.isPresent()){
-            Recruteur s=std.get();
-            s.setNom(recruteur.getNom());
-            return repository.save(s);
-        }
-        else
-            return null;
+    public Recruteur updateRecruteur(@PathVariable String id, @RequestBody Recruteur recruteur) {
+        recruteur.setId(id);
+        return repository.save(recruteur);
     }
+//    @PutMapping("{id}")
+//    public Recruteur updateRecruteur(@PathVariable Integer id,@RequestBody Recruteur recruteur){
+//        Optional<Recruteur> std= repository.findById(id);
+//        if(std.isPresent()){
+//            Recruteur s=std.get();
+//            s.setNom(recruteur.getNom());
+//            return repository.save(s);
+//        }
+//        else
+//            return null;
+//    }
 
     @DeleteMapping("{id}")
-    public String deleteRecruterur(@PathVariable Integer id){
+    public String deleteRecruterur(@PathVariable String id){
         repository.deleteById(id);
         return "Document Deleted";
     }

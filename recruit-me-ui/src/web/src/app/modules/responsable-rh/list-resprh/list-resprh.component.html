@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <button [routerLink]="['/responsable-rh/new']"  mat-raised-button >Ajouter responsable RH </button>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des responsables RH</h4>
+                        <p class="card-category"> Liste des responsables RH et informations supplémentaires</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-secondary">
+                                <th>ID</th>
+                                <th>Nom et prenom</th>
+                                <th>Action</th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let responsableRH of responsablesRH">
+                                    <td>{{responsableRH.id}}</td>
+                                    <td>{{responsableRH.nom +' '+responsableRH.prenom}}</td>
+                                    <td>
+                                        <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/responsable-rh/update/'+responsableRH.id]"  mat-icon-button ><mat-icon>edit</mat-icon></button>
+
+
+                                        <button class="action-button" mat-mini-fab color="warn" (click)="deleteResponsable(responsableRH.id)"><mat-icon>delete</mat-icon> </button>
+
+                                    </td>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

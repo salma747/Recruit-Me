@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <button [routerLink]="['/recruteur/new']"  mat-raised-button >Ajouter recruteur </button>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des recruteurs</h4>
+                        <p class="card-category"> Liste des recruteurs et informations supplémentaires</p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-secondary">
+                                <th>ID</th>
+                                <th>Nom et prenom</th>
+                                <th>Poste actuel</th>
+                                <th>Candidats</th>
+                                <th>Date de disponibilité</th>
+                                <th>Date d'entretien</th>
+                                <th width="200px">Action</th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let recruteur of recruteur">
+                                    <td>{{recruteur.id}}</td>
+                                    <td>{{recruteur.nom +' '+recruteur.prenom}}</td>
+                                    <td>{{recruteur.posteActuel}}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/recruteur/update/'+recruteur.id]"  mat-icon-button ><mat-icon>edit</mat-icon></button>
+
+
+                                        <button class="action-button" mat-mini-fab color="warn" (click)="deleteRecruteur(recruteur.id)"><mat-icon>delete</mat-icon> </button>
+
+                                    </td>
+
+                                    <!-- <button (click)="Details(recruteur.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                </td>-->
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

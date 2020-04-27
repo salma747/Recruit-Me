@@ -17,7 +17,6 @@ import tn.iit.fod.responsablemodel.Responsable;
 import tn.iit.fod.responsablerepository.ResponsableRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("responsableRH")
 public class ResponsableController {
 
@@ -33,36 +32,37 @@ public class ResponsableController {
     }
 
     @GetMapping("all")
-    public List<Responsable> getAllResponsable(){
-        Iterator<Responsable> iterator= repository.findAll().iterator();
-        List<Responsable> responsables=new ArrayList<Responsable>();
-        while(iterator.hasNext()){
-            responsables.add(iterator.next());
-        }
-        return responsables;
+    public Iterable<Responsable> getAllResponsable(){
+        return repository.findAll();
     }
 
 
     @GetMapping("{id}")
-    public Optional<Responsable> getResponsable(@PathVariable Integer id){
+    public Optional<Responsable> getResponsable(@PathVariable String id){
         return repository.findById(id);
     }
 
 
     @PutMapping("{id}")
-    public Responsable updateResponsable(@PathVariable Integer id,@RequestBody Responsable responsable){
-        Optional<Responsable> std= repository.findById(id);
-        if(std.isPresent()){
-            Responsable s=std.get();
-            s.setNom(responsable.getNom());
-            return repository.save(s);
-        }
-        else
-            return null;
+    public Responsable updateResponsable(@PathVariable String id, @RequestBody Responsable responsable) {
+        responsable.setId(id);
+        return repository.save(responsable);
     }
 
+//    @PutMapping("{id}")
+//    public Responsable updateResponsable(@PathVariable String id,@RequestBody Responsable responsable){
+//        Optional<Responsable> std= repository.findById(id);
+//        if(std.isPresent()){
+//            Responsable s=std.get();
+//            s.setNom(responsable.getNom());
+//            return repository.save(s);
+//        }
+//        else
+//            return null;
+//    }
+
     @DeleteMapping("{id}")
-    public String deleteResponsable(@PathVariable Integer id){
+    public String deleteResponsable(@PathVariable String id){
         repository.deleteById(id);
         return "Document Deleted";
     }

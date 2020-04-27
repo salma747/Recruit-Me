@@ -1,21 +1,20 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 
-import { AppRoutingModule } from './app.routing';
+import { AppRoutingModule } from './app.routing.module';
 import { ComponentsModule } from './components/components.module';
 
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AddCandidatComponent } from './add-candidat/add-candidat.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { AddRecruteursComponent } from './add-recruteur/add-recruteurs.component';
-import { ListRecruteursComponent } from './list-recruteurs/list-recruteurs.component';
-import { AddResprhComponent } from './add-resprh/add-resprh.component';
-import { ListResprhComponent } from './list-resprh/list-resprh.component';
+import { AddCandidatComponent } from './modules/candidat/add-candidat/add-candidat.component';
+import { TableListComponent } from './modules/candidat/table-list/table-list.component';
+import { AddRecruteursComponent } from './modules/recruteur/add-recruteur/add-recruteurs.component';
+import { ListRecruteursComponent } from './modules/recruteur/list-recruteurs/list-recruteurs.component';
+import { AddResprhComponent } from './modules/responsable-rh/add-resprh/add-resprh.component';
+import { ListResprhComponent } from './modules/responsable-rh/list-resprh/list-resprh.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
@@ -36,35 +35,43 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { LoginComponent } from './login/login.component';
-import { UpdateCandidatComponent } from './update-candidat/update-candidat.component';
+import { UpdateCandidatComponent } from './modules/candidat/update-candidat/update-candidat.component';
 import {MatInputModule} from "@angular/material/input";
+import {MatCarouselModule} from "@ngmodule/material-carousel";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {UpdateRecruteurComponent} from "./modules/recruteur/update-recruteur/update-recruteur.component";
+import {UpdateResprhComponent} from "./modules/responsable-rh/update-resprh/update-resprh.component";
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    ComponentsModule,
-    RouterModule,
-    HttpClientModule,
-    AppRoutingModule,
-
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    }),
-    MatFormFieldModule,
-    MatInputModule
-  ],
+    imports: [
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ComponentsModule,
+        RouterModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatCarouselModule.forRoot(),
+        AgmCoreModule.forRoot({
+            apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
+        }),
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        MatButtonModule
+    ],
   declarations: [
     AppComponent,
     LoginComponent,
-    UpdateCandidatComponent,
-    TableListComponent,
-    AddCandidatComponent,
-    AddRecruteursComponent,
+    //UpdateCandidatComponent,
+    //UpdateRecruteurComponent,
+    //UpdateResprhComponent,
+    //TableListComponent,
+    //AddRecruteursComponent,
+    AdminLayoutComponent,
     //AddResprhComponent,
-    ListRecruteursComponent
+    //ListRecruteursComponent,
     //ListResprhComponent,
 
   ],

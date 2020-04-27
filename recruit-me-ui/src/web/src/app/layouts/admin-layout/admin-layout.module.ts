@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 //import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { AddCandidatComponent } from '../../add-candidat/add-candidat.component';
-import { TableListComponent } from '../../table-list/table-list.component';
-import { AddRecruteursComponent } from '../../add-recruteur/add-recruteurs.component';
-import { ListRecruteursComponent } from '../../list-recruteurs/list-recruteurs.component';
-import { AddResprhComponent } from '../../add-resprh/add-resprh.component';
-import { ListResprhComponent } from '../../list-resprh/list-resprh.component';
+import { AddCandidatComponent } from '../../modules/candidat/add-candidat/add-candidat.component';
+import { TableListComponent } from '../../modules/candidat/table-list/table-list.component';
+import { AddRecruteursComponent } from '../../modules/recruteur/add-recruteur/add-recruteurs.component';
+import { ListRecruteursComponent } from '../../modules/recruteur/list-recruteurs/list-recruteurs.component';
+import { AddResprhComponent } from '../../modules/responsable-rh/add-resprh/add-resprh.component';
+import { ListResprhComponent } from '../../modules/responsable-rh/list-resprh/list-resprh.component';
 //import { TypographyComponent } from '../../typography/typography.component';
 //import { IconsComponent } from '../../icons/icons.component';
 //import { MapsComponent } from '../../maps/maps.component';
@@ -25,7 +25,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {AdminLayoutComponent} from "./admin-layout.component";
 import {ComponentsModule} from "../../components/components.module";
-import {UpdateCandidatComponent} from "../../update-candidat/update-candidat.component";
+import {UpdateCandidatComponent} from "../../modules/candidat/update-candidat/update-candidat.component";
 
 @NgModule({
   imports: [
@@ -50,7 +50,7 @@ import {UpdateCandidatComponent} from "../../update-candidat/update-candidat.com
     //AddResprhComponent,
     //ListRecruteursComponent,
     //ListResprhComponent,
-    AdminLayoutComponent,
+    // AdminLayoutComponent,
     //IconsComponent,
     //MapsComponent,
     //NotificationsComponent,

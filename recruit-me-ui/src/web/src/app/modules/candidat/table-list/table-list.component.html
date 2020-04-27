@@ -1,0 +1,61 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <button [routerLink]="['/candidats/new']"  mat-raised-button >Ajouter candidat </button>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des candidats</h4>
+                        <p class="card-category"> Liste des candidats et informations supplémentaires</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-secondary">
+                                <th>ID</th>
+                                <th>Nom et prenom</th>
+                                <th> Poste souhaité</th>
+                                <th>Recruteur</th>
+                                <th>Test Technique</th>
+                                <th>Résultat du test</th>
+                                <th>Date d'entretien</th>
+                                <th>Points d'amélioration</th>
+                                <th>CV</th>
+                                <th width="200px">Action</th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let candidat of candidats">
+                                    <td>{{candidat.id}}</td>
+                                    <td>{{candidat.nom +' '+candidat.prenom}}</td>
+                                    <td>{{candidat.posteSouhaite}}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <ng-container *ngIf="candidat.cv">
+                                            <a mat-mini-fab color="primary" [href]="downloadUrl+candidat.cv" download><mat-icon>save_alt</mat-icon> </a>
+                                        </ng-container>
+                                    </td>
+                                    <td>
+                                        <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/candidats/update/'+candidat.id]"  mat-icon-button ><mat-icon>edit</mat-icon></button>
+
+
+                                        <button class="action-button" mat-mini-fab color="warn" (click)="deleteCandidat(candidat.id)"><mat-icon>delete</mat-icon> </button>
+
+                                    </td>
+
+                                    <!-- <button (click)="candidatDetails(candidat.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                </td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

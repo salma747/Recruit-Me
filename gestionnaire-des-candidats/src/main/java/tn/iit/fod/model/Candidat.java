@@ -20,6 +20,7 @@ public class Candidat {
     private String diplome;
     private String nombreAnneeExperience;
     private String posteSouhaite;
+    private String cv;
 
     public String getId() {
         return id;
@@ -101,6 +102,15 @@ public class Candidat {
         this.nombreAnneeExperience = nombreAnneeExperience;
     }
 
+    public String getCv() {
+        return cv;
+    }
+
+    public void setCv(String cv) {
+        this.cv = cv;
+    }
+
+
     public String getPosteSouhaite() {
         return posteSouhaite;
     }
@@ -109,21 +119,21 @@ public class Candidat {
         this.posteSouhaite = posteSouhaite;
     }
 
-
-    public Candidat(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse, String diplome, String nombreAnneeExperience, String posteSouhaite) {
-        super();
-        this.id = id;
-        this.nomUtilisateur = nomUtilisateur;
-        this.adresseEmail = adresseEmail;
-        this.motpasse = motpasse;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.adresse = adresse;
-        this.diplome = diplome;
-        this.nombreAnneeExperience = nombreAnneeExperience;
-        this.posteSouhaite = posteSouhaite;
-    }
+//
+//    public Candidat(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse, String diplome, String nombreAnneeExperience, String posteSouhaite, String CV) {
+//        super();
+//        this.id = id;
+//        this.nomUtilisateur = nomUtilisateur;
+//        this.adresseEmail = adresseEmail;
+//        this.motpasse = motpasse;
+//        this.nom = nom;
+//        this.prenom = prenom;
+//        this.dateNaissance = dateNaissance;
+//        this.adresse = adresse;
+//        this.diplome = diplome;
+//        this.nombreAnneeExperience = nombreAnneeExperience;
+//        this.posteSouhaite = posteSouhaite;
+//    }
 
     public Candidat(){}
 

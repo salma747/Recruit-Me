@@ -30,6 +30,8 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn = this.authenticationService.isUserLoggedIn();
         console.log('menu ->' + this.isLoggedIn);
       this.listTitles = ROUTES.filter(listTitle => listTitle);
+      this.listTitles.push({ path: '/candidats/new', title: 'Ajout Candidat'});
+      //this.listTitles.push({ path: '/candidats/update', title: 'Modification Du Candidat'});
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
       this.router.events.subscribe((event) => {

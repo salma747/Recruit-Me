@@ -8,6 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @Document(indexName = "responsable", type = "default")
 public class Responsable {
 
+    @Id
     private String id;
     private String nomUtilisateur;
     private String adresseEmail;
@@ -83,17 +84,17 @@ public class Responsable {
     }
 
 
-    public Responsable(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse) {
-        super();
-       this.id = id;
-        this.nomUtilisateur = nomUtilisateur;
-        this.adresseEmail = adresseEmail;
-        this.motpasse = motpasse;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.adresse = adresse;
-
-    }
+//    public Responsable(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse) {
+//        super();
+//       this.id = id;
+//        this.nomUtilisateur = nomUtilisateur;
+//        this.adresseEmail = adresseEmail;
+//        this.motpasse = motpasse;
+//        this.nom = nom;
+//        this.prenom = prenom;
+//        this.dateNaissance = dateNaissance;
+//        this.adresse = adresse;
+//
+//    }
     public Responsable(){}
 }
