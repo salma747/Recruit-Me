@@ -36,8 +36,10 @@ public class ResponsableController {
     }
 
     @GetMapping("all")
-    public Iterable<Responsable> getAllResponsable(){
-        return repository.findAll();
+    public List<Responsable> getAllResponsable(){
+        List<Responsable> result = new ArrayList<>();
+        repository.findAll().iterator().forEachRemaining(result::add);
+        return result;
     }
 
 
