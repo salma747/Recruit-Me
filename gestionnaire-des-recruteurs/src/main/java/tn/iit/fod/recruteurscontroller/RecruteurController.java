@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import tn.iit.fod.recruteurmodel.Recruteur;
 import tn.iit.fod.recruteurrepository.RecruteurRepository;
@@ -17,9 +18,13 @@ public class RecruteurController {
     @Autowired
     RecruteurRepository repository;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
 
     @PostMapping("add")
     public Recruteur addRecruteur(@RequestBody Recruteur recruteur ){
+        recruteur.setMotpasse(passwordEncoder.encode(recruteur.getMotpasse()));
         return repository.save(recruteur);
     }
 
@@ -43,6 +48,8 @@ public class RecruteurController {
     @PutMapping("{id}")
     public Recruteur updateRecruteur(@PathVariable String id, @RequestBody Recruteur recruteur) {
         recruteur.setId(id);
+        recruteur.setMotpasse(passwordEncoder.encode(recruteur.getMotpasse()));
+
         return repository.save(recruteur);
     }
 //    @PutMapping("{id}")

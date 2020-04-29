@@ -12,6 +12,7 @@ import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import tn.iit.fod.responsablemodel.Responsable;
 import tn.iit.fod.responsablerepository.ResponsableRepository;
@@ -24,10 +25,13 @@ public class ResponsableController {
     @Autowired
     ResponsableRepository repository;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
 
     @PostMapping("add")
     public Responsable addResponsableRH(@RequestBody Responsable responsableRH ){
-
+        responsableRH.setMotpasse(passwordEncoder.encode(responsableRH.getMotpasse()));
         return repository.save(responsableRH);
     }
 
@@ -46,6 +50,7 @@ public class ResponsableController {
     @PutMapping("{id}")
     public Responsable updateResponsable(@PathVariable String id, @RequestBody Responsable responsable) {
         responsable.setId(id);
+        responsable.setMotpasse(passwordEncoder.encode(responsable.getMotpasse()));
         return repository.save(responsable);
     }
 

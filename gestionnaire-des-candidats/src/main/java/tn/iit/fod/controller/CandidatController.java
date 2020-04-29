@@ -2,6 +2,7 @@ package tn.iit.fod.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import tn.iit.fod.model.Candidat;
@@ -25,9 +26,13 @@ public class CandidatController {
     @Autowired
     UploadService uploadService;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
 
     @PostMapping("add")
     public Candidat addCandidat(@RequestBody Candidat candidat) {
+        candidat.setMotpasse(passwordEncoder.encode(candidat.getMotpasse()));
         return repository.save(candidat);
     }
 
@@ -51,6 +56,7 @@ public class CandidatController {
     @PutMapping("{id}")
     public Candidat updateCandidat(@PathVariable String id, @RequestBody Candidat candidat) {
         candidat.setId(id);
+        candidat.setMotpasse(passwordEncoder.encode(candidat.getMotpasse()));
         return repository.save(candidat);
     }
 

@@ -16,6 +16,7 @@ import { AddResprhComponent } from "./modules/responsable-rh/add-resprh/add-resp
 import {ListResprhComponent} from "./modules/responsable-rh/list-resprh/list-resprh.component";
 import {UpdateResprhComponent} from "./modules/responsable-rh/update-resprh/update-resprh.component";
 
+// @ts-ignore
 const routes: Routes =[
   {path: 'login', component: LoginComponent},
   {path: '', component: LoginComponent},
