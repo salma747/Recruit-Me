@@ -13,7 +13,7 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-secondary">
-                                <th>ID</th>
+                                <!--<th>ID</th>-->
                                 <th>Nom et prenom</th>
                                 <th> Poste souhaité</th>
                                 <th>Recruteur</th>
@@ -26,29 +26,29 @@
                                 </thead>
                                 <tbody>
                                 <tr *ngFor="let candidat of candidats">
-                                    <td>{{candidat.id}}</td>
-                                    <td>{{candidat.nom +' '+candidat.prenom}}</td>
-                                    <td>{{candidat.posteSouhaite}}</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <ng-container *ngIf="candidat.cv">
-                                            <a mat-mini-fab color="basic" [href]="downloadUrl+candidat.cv" download><mat-icon>save_alt</mat-icon> </a>
-                                        </ng-container>
-                                    </td>
-                                    <td>
-                                        <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/candidats/update/'+candidat.id]"  mat-icon-button ><mat-icon>edit</mat-icon></button>
+                                    <!-- <td>{{candidat.id}}</td> -->
+                                     <td>{{candidat.nom +' '+candidat.prenom}}</td>
+                                     <td>{{candidat.posteSouhaite}}</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td>
+                                         <ng-container *ngIf="candidat.cv">
+                                             <a mat-mini-fab color="basic" [href]="downloadUrl+candidat.cv" download><mat-icon>save_alt</mat-icon> </a>
+                                         </ng-container>
+                                     </td>
+                                     <td>
+                                         <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/candidats/update/'+candidat.id]"  mat-icon-button ><mat-icon>edit</mat-icon></button>
 
 
-                                        <button class="action-button" mat-mini-fab color="warn" (click)="deleteCandidat(candidat.id)"><mat-icon>delete</mat-icon> </button>
+                                         <button class="action-button" mat-mini-fab color="warn" (click)="deleteCandidat(candidat.id)"><mat-icon>delete</mat-icon> </button>
 
-                                    </td>
+                                     </td>
 
-                                    <!-- <button (click)="candidatDetails(candidat.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
-                                </td>-->
+                                     <!-- <button (click)="candidatDetails(candidat.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                                 </td>-->
                                 </tr>
                                 </tbody>
                             </table>

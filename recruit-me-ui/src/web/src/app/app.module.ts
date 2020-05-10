@@ -25,7 +25,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 
-import { HttpInterceptorService } from './httpInterceptor.service';
+//import { HttpInterceptorService } from './httpInterceptor.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import {
@@ -42,6 +42,12 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {UpdateRecruteurComponent} from "./modules/recruteur/update-recruteur/update-recruteur.component";
 import {UpdateResprhComponent} from "./modules/responsable-rh/update-resprh/update-resprh.component";
+import {iamcredentials} from "googleapis/build/src/apis/iamcredentials";
+import {CredentialsInterceptor} from "./core/interceptors/credentials/credentials.interceptor";
+import {AuthGuard} from "./core/guards/auth/auth.guard";
+import {RecruteurGuard} from "./core/guards/recruteur/recruteur.guard";
+import {CandidatGuard} from "./core/guards/candidat/candidat.guard";
+import {ResponsableRHGuard} from "./core/guards/responsable-rh/responsable-rh.guard";
 
 @NgModule({
     imports: [
@@ -75,13 +81,13 @@ import {UpdateResprhComponent} from "./modules/responsable-rh/update-resprh/upda
     //ListResprhComponent,
 
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpInterceptorService,
-      multi: true
-    }
-  ],
+    providers: [ {
+        provide: HTTP_INTERCEPTORS,
+        useClass: CredentialsInterceptor,
+        multi: true },
+    AuthGuard,RecruteurGuard,CandidatGuard,ResponsableRHGuard ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

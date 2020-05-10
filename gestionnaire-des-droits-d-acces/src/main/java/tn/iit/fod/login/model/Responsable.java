@@ -17,6 +17,39 @@ public class Responsable {
     private String dateNaissance;
     private String adresse;
 
+    public Responsable() {
+    }
+
+    public Responsable(
+            String nomUtilisateur,
+            String adresseEmail,
+            String motpasse,
+            String nom,
+            String prenom,
+            String dateNaissance,
+            String adresse) {
+        super();
+        this.nomUtilisateur = nomUtilisateur;
+        this.adresseEmail = adresseEmail;
+        this.motpasse = motpasse;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.adresse = adresse;
+
+    }
+
+    public Responsable(
+            String nomUtilisateur,
+            String adresseEmail,
+            String motpasse,
+            String nom,
+            String prenom) {
+        this(nomUtilisateur, adresseEmail, motpasse, nom, prenom, null, null);
+
+
+    }
+
 
     public String getId() {
         return id;
@@ -82,18 +115,4 @@ public class Responsable {
         this.adresse = adresse;
     }
 
-
-//    public Responsable(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse) {
-//        super();
-//       this.id = id;
-//        this.nomUtilisateur = nomUtilisateur;
-//        this.adresseEmail = adresseEmail;
-//        this.motpasse = motpasse;
-//        this.nom = nom;
-//        this.prenom = prenom;
-//        this.dateNaissance = dateNaissance;
-//        this.adresse = adresse;
-//
-//    }
-    public Responsable(){}
 }

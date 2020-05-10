@@ -56,7 +56,7 @@ public class DroitAccesUserDetailsService implements UserDetailsService {
             return User
                     .withUsername(responsable.getNomUtilisateur())
                     .password(responsable.getMotpasse())
-                    .authorities("ROLE_RESPONSABLE")
+                    .authorities("ROLE_RESPONSABLE_RH")
                     .build();
         }
 

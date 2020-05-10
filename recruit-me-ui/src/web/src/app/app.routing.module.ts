@@ -15,6 +15,10 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import { AddResprhComponent } from "./modules/responsable-rh/add-resprh/add-resprh.component";
 import {ListResprhComponent} from "./modules/responsable-rh/list-resprh/list-resprh.component";
 import {UpdateResprhComponent} from "./modules/responsable-rh/update-resprh/update-resprh.component";
+import {RecruteurGuard} from "./core/guards/recruteur/recruteur.guard";
+import {CandidatGuard} from "./core/guards/candidat/candidat.guard";
+import {ResponsableRH} from "./core/models/responsableRH";
+import {ResponsableRHGuard} from "./core/guards/responsable-rh/responsable-rh.guard";
 
 // @ts-ignore
 const routes: Routes =[
@@ -31,9 +35,10 @@ const routes: Routes =[
       // {path: 'responsable-rh', component: ListResprhComponent},
       // {path: 'update-recruteur/:id', component: UpdateRecruteurComponent},
       // {path: 'update-responsableRH/:id', component: UpdateResprhComponent}
-          {path: 'candidats', loadChildren: () => import('./modules/candidat/candidat.module').then(m => m.CandidatModule)},
-          {path: 'recruteur', loadChildren: () => import('./modules/recruteur/recruteur.module').then(m => m.RecruteurModule)},
-          {path: 'responsable-rh', loadChildren: () => import('./modules/responsable-rh/responsable-rh.module').then(m => m.ResponsableRHModule)},
+          //{path: 'candidats', loadChildren: () => import('./modules/candidat/candidat.module').then(m => m.CandidatModule),canActivate: [CandidatGuard]},
+          {path: 'candidats', loadChildren: () => import('./modules/candidat/candidat.module').then(m => m.CandidatModule),canActivate: [RecruteurGuard]},
+          {path: 'recruteur', loadChildren: () => import('./modules/recruteur/recruteur.module').then(m => m.RecruteurModule), canActivate: [ResponsableRHGuard]},
+          {path: 'responsable-rh', loadChildren: () => import('./modules/responsable-rh/responsable-rh.module').then(m => m.ResponsableRHModule), canActivate: [ResponsableRHGuard] },
     ]},
 ];
 

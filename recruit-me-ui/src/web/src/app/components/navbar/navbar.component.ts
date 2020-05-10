@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.isLoggedIn = this.authenticationService.isUserLoggedIn();
+        this.isLoggedIn = true;
         console.log('menu ->' + this.isLoggedIn);
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       this.listTitles.push({ path: '/candidats/new', title: 'Ajout Candidat'});

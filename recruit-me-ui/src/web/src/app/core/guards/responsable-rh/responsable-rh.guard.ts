@@ -13,7 +13,7 @@ export class ResponsableRHGuard implements CanActivate {
       next: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const user = JSON.parse(localStorage.getItem("login"));
-    if(!user || user.authorities.indexOf("ROLE_RESPONSABLE_RH") < 0) {
+    if(!user || user.authorities.findIndex(auth => auth.authority === 'ROLE_RESPONSABLE_RH') < 0) {
       this.router.navigate(['/login']);
       return false;
     }

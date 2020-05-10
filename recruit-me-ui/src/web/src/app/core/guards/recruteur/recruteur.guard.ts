@@ -13,10 +13,12 @@ export class RecruteurGuard implements CanActivate {
       next: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const user = JSON.parse(localStorage.getItem("login"));
-    if(!user || user.authorities.indexOf("ROLE_RECRUTEUR") < 0) {
-      this.router.navigate(['/login']);
-      return false;
+    if(user &&
+        (user.authorities.findIndex(auth => auth.authority === 'ROLE_RECRUTEUR') >= 0 || user.authorities.findIndex(auth => auth.authority === 'ROLE_RESPONSABLE_RH') >= 0)) {
+      return true;
+
     }
-    return true;
+    this.router.navigate(['/login']);
+    return false;
   }
 }

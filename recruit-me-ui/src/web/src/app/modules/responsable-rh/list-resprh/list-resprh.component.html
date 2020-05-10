@@ -13,26 +13,26 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-secondary">
-                                <th>ID</th>
-                                <th>Nom et prenom</th>
-                                <th>Action</th>
-                                </thead>
-                                <tbody>
-                                <tr *ngFor="let responsableRH of responsablesRH">
-                                    <td>{{responsableRH.id}}</td>
-                                    <td>{{responsableRH.nom +' '+responsableRH.prenom}}</td>
-                                    <td>
-                                        <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/responsable-rh/update/'+responsableRH.id]"  mat-icon-button ><mat-icon>edit</mat-icon></button>
+                                <!-- <th>ID</th> -->
+                                 <th>Nom et prenom</th>
+                                 <th>Action</th>
+                                 </thead>
+                                 <tbody>
+                                 <tr *ngFor="let responsableRH of responsablesRH">
+                                     <!--   <td>{{responsableRH.id}}</td> -->
+                                        <td>{{responsableRH.nom +' '+responsableRH.prenom}}</td>
+                                        <td>
+                                            <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/responsable-rh/update/'+responsableRH.id]"  mat-icon-button ><mat-icon>edit</mat-icon></button>
 
 
-                                        <button class="action-button" mat-mini-fab color="warn" (click)="deleteResponsable(responsableRH.id)"><mat-icon>delete</mat-icon> </button>
+                                            <button class="action-button" mat-mini-fab color="warn" (click)="deleteResponsable(responsableRH.id)"><mat-icon>delete</mat-icon> </button>
 
-                                    </td>
-                            </table>
+                                        </td>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

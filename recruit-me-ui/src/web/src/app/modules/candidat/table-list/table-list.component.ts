@@ -5,6 +5,7 @@ import { CandidatService } from "../../../core/services/candidat-service/candida
 import { Candidat } from "../../../core/models/candidat";
 import { Router } from '@angular/router';
 import {environment} from "../../../../environments/environment";
+import {AuthenticationService} from "../../../login/auth.service";
 
 
 @Component({
@@ -17,7 +18,7 @@ export class TableListComponent implements OnInit {
 
     downloadUrl = environment.baseUrlCandidat+'candidats/file/';
 
-    constructor(private candidatService: CandidatService,
+    constructor(private candidatService: CandidatService, private authService: AuthenticationService,
                 private router: Router) { }
 
     ngOnInit() {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Candidat } from '../../../core/models/candidat';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CandidatService } from '../../../core/services/candidat-service/candidat.service';
+import {HttpEventType} from "@angular/common/http";
 
 @Component({
   selector: 'app-update-candidat',
@@ -12,6 +13,8 @@ export class UpdateCandidatComponent implements OnInit {
 
   id: number;
   candidat: Candidat;
+    submitted = false;
+    loading = undefined;
 
   constructor(private route: ActivatedRoute,private router: Router,
               private candidatService: CandidatService) { }
@@ -45,4 +48,21 @@ export class UpdateCandidatComponent implements OnInit {
     this.router.navigate(['/candidats']);
   }
 
+    fileChanged(event) {
+        if (event.target.files && event.target.files[0]) {
+            const reader = new FileReader();
+            reader.readAsDataURL(event.target.files[0]);
+            reader.onload = () => {
+                this.candidatService.uploadFile(event.target.files[0]).subscribe(value => {
+                    if (value.type === HttpEventType.UploadProgress) {
+                        this.loading = 100 * value.loaded / value.total;
+                    }
+                    if (value.type === HttpEventType.Response) {
+                        this.loading = undefined;
+                        this.candidat.cv = value.body;
+                    }
+                });
+            }
+        }
+    }
 }

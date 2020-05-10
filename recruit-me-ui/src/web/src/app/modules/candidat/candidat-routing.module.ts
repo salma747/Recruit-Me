@@ -4,6 +4,7 @@ import {AddRecruteursComponent} from "../recruteur/add-recruteur/add-recruteurs.
 import {TableListComponent} from "./table-list/table-list.component";
 import {UpdateCandidatComponent} from "./update-candidat/update-candidat.component";
 import {AddCandidatComponent} from "./add-candidat/add-candidat.component";
+import {AuthGuard} from "../../core/guards/auth/auth.guard";
 
 
 const routes: Routes = [
@@ -19,3 +20,4 @@ const routes: Routes = [
 export class CandidatRoutingModule {
 
 }
+

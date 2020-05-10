@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput name="motpasse" [(ngModel)]="candidat.motpasse" placeholder="Mot de passe" type="text">
+                                        <input matInput name="motpasse" [(ngModel)]="candidat.motpasse" placeholder="Mot de passe" type="password" [disabled]="id">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -83,7 +83,11 @@
                                      </div>
                                  </div>
                              </div>-->
-                            <button mat-raised-button>Deposer CV</button>
+                           <!-- <button mat-raised-button>Deposer CV</button> -->
+                            <span *ngIf="loading">{{loading}}%</span>
+                            <label mat-raised-button for="files" class="btn pull-left">Deposer CV</label>
+
+                            <input type="file" id="files" style="visibility:hidden;" (change)="fileChanged($event)"/>
                             <button mat-raised-button type="submit" class="btn btn-danger pull-right">Sauvegarder</button>
                             <div class="clearfix"></div>
                         </form>

@@ -6,15 +6,17 @@ declare interface RouteInfo {
     title: string;
     icon: string;
     class: string;
+    role: string[];
 }
 export const ROUTES: RouteInfo[] = [
    // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
    // { path: '/user-profile', title: 'Ajout CandidatModel',  icon:'person', class: '' },
-    { path: '/candidats', title: 'Gestion Des Candidats',  icon:'content_paste', class: '' },
+    { path: '/candidats', title: 'Gestion Des Candidats',  icon:'content_paste', class: '', role: ["ROLE_RESPONSABLE_RH","ROLE_RECRUTEUR"] },
     // { path: '/add-recruteur', title: 'Ajout Recruteur',  icon:'person', class: '' },
-    { path: '/recruteur', title: 'Gestion Des Recruteurs',  icon:'content_paste', class: '' },
+    { path: '/recruteur', title: 'Gestion Des Recruteurs',  icon:'content_paste', class: '', role: ["ROLE_RESPONSABLE_RH"] },
    // { path: '/add-resprh', title: 'Ajout Responsable RH',  icon:'person', class: '' },
-    { path: '/responsable-rh', title: 'Gestion Des ResponsablesRH',  icon:'content_paste', class: '' },
+    { path: '/responsable-rh', title: 'Gestion Des ResponsablesRH',  icon:'content_paste', class: '', role: ["ROLE_RESPONSABLE_RH"] },
+    //{ path: '/responsable-rh', title: 'Gestion Des ResponsablesRH',  icon:'content_paste', class: '', role: ["ROLE_RESPONSABLE_RH"] },
 
     //{ path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     //{ path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
@@ -41,4 +43,12 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+  canView(menu: RouteInfo) {
+      const user = JSON.parse(localStorage.getItem("login"));
+
+      user.authorities = user.authorities.map(role => role.authority);
+      const value = menu.role.find(role => user.authorities.indexOf(role) >= 0);
+      console.log(value);
+      return !!value;
+  }
 }

@@ -12,6 +12,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {AuthGuard} from "../../core/guards/auth/auth.guard";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {MatButtonModule} from "@angular/material/button";
       MatInputModule,
       MatIconModule,
       MatButtonModule
-  ]
+  ],
+  providers:[AuthGuard],
 })
 export class CandidatModule { }

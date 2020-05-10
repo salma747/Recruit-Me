@@ -8,5 +8,5 @@ export const environment = {
   baseUrlCandidat: 'http://localhost:8080/gestionnaire-des-candidats/',
   baseUrlRecruteur: 'http://localhost:8080/gestionnaire-des-recruteurs/',
   baseUrlResponsableRh: 'http://localhost:8080/gestionnaire-des-responsables-ressources-humaines/',
-  loginUrl: 'http://localhost:8080/gestionnaire_des_droits_d_acces/login/auth'
+  loginUrl: 'http://localhost:8080/gestionnaire_des_droits_d_acces/login'
 };
