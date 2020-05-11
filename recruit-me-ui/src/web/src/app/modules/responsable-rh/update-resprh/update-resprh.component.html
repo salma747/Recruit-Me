@@ -12,12 +12,12 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput name="nomUtilisateur" [(ngModel)]="resprh.nomUtilisateur" placeholder="Nom d'utilisateur"  type="text"><!--disabled -->
+                                        <input matInput name="nomUtilisateur" [(ngModel)]="resprh.nomUtilisateur" placeholder="Nom d'utilisateur" type="text"><!--disabled -->
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput name="adresseEmail" [(ngModel)]="resprh.adresseEmail" placeholder="Adresse Email" type="email">
+                                        <input matInput name="adresseEmail" [(ngModel)]="resprh.adresseEmail" placeholder="Adresse Email" type="email" pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\.[a-z]{2,3}">
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
