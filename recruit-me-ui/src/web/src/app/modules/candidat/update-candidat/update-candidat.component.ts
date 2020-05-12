@@ -3,6 +3,7 @@ import { Candidat } from '../../../core/models/candidat';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CandidatService } from '../../../core/services/candidat-service/candidat.service';
 import {HttpEventType} from "@angular/common/http";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-update-candidat',
@@ -17,7 +18,7 @@ export class UpdateCandidatComponent implements OnInit {
     loading = undefined;
 
   constructor(private route: ActivatedRoute,private router: Router,
-              private candidatService: CandidatService) { }
+              private candidatService: CandidatService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.candidat = new Candidat();
@@ -36,6 +37,9 @@ export class UpdateCandidatComponent implements OnInit {
           console.log(data);
           this.candidat = new Candidat();
           this.gotoList();
+            this._snackBar.open("utilisateur modifié", "OK", {
+                duration: 2000,
+            });
         }, error => console.log(error));
 
   }

@@ -11,4 +11,5 @@ export class Candidat {
     nombreAnneeExperience: string;
     posteSouhaite: string;
     cv :string;
+    photo :string;
 }

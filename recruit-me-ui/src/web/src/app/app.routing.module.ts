@@ -39,6 +39,7 @@ const routes: Routes =[
           {path: 'candidats', loadChildren: () => import('./modules/candidat/candidat.module').then(m => m.CandidatModule),canActivate: [RecruteurGuard]},
           {path: 'recruteur', loadChildren: () => import('./modules/recruteur/recruteur.module').then(m => m.RecruteurModule), canActivate: [ResponsableRHGuard]},
           {path: 'responsable-rh', loadChildren: () => import('./modules/responsable-rh/responsable-rh.module').then(m => m.ResponsableRHModule), canActivate: [ResponsableRHGuard] },
+          {path: 'test', loadChildren: () => import('./modules/test-technique/test-technique.module').then(m => m.TestTechniqueModule), canActivate: [CandidatGuard] }
     ]},
 ];
 

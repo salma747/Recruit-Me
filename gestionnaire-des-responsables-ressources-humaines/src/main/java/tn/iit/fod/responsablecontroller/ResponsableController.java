@@ -51,8 +51,8 @@ public class ResponsableController {
 
     @PutMapping("{id}")
     public Responsable updateResponsable(@PathVariable String id, @RequestBody Responsable responsable) {
+        repository.findById(id).ifPresent(old -> responsable.setMotpasse(old.getMotpasse()));
         responsable.setId(id);
-        responsable.setMotpasse(passwordEncoder.encode(responsable.getMotpasse()));
         return repository.save(responsable);
     }
 

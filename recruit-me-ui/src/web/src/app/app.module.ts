@@ -76,6 +76,7 @@ import {ResponsableRHGuard} from "./core/guards/responsable-rh/responsable-rh.gu
     //TableListComponent,
     //AddRecruteursComponent,
     AdminLayoutComponent,
+      DashboardComponent
     //AddResprhComponent,
     //ListRecruteursComponent,
     //ListResprhComponent,

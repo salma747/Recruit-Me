@@ -1,14 +1,14 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">Ajouter un candidat</h4>
                         <p class="card-category">Ajouter les informations d'un nouveau candidat</p>
                     </div>
                     <div class="card-body">
-                        <form (submit)="onSubmit()">
+                        <form (submit)="onSubmit(addUserForm)" #addUserForm="ngForm">
                             <div class="row">
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
@@ -22,7 +22,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput name="motpasse" [(ngModel)]="candidat.motpasse"  placeholder="Mot de passe" required type="password" >
+                                        <input matInput name="motpasse" [(ngModel)]="candidat.motpasse"  placeholder="Mot de passe" required [type]="viewPassword ? 'text' : 'password'" >
+                                        <button matSuffix mat-icon-button (click)="toggleViewPassword()"><mat-icon>{{viewPassword ? 'visibility_off' : 'visibility'}}</mat-icon></button>
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -87,29 +88,38 @@
                             <label mat-raised-button for="files" class="btn pull-left">Deposer CV</label>
 
                             <input type="file" id="files" style="visibility:hidden;" (change)="fileChanged($event)"/>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Ajouter Candidat</button>
+                            <button mat-raised-button type="submit" [disabled]="addUserForm.invalid" class="btn btn-danger pull-right">Ajouter Candidat</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-md-4">
+
+            <div class="col-md-4">
                  <div class="card card-profile">
                      <div class="card-avatar">
                          <a href="javascript:void(0)">
+                             <ng-container *ngIf="candidat.photo">
+                                <a class="img" [href]="downloadUrl+candidat.photo" download></a>
+                             </ng-container>
                              <img class="img" src="./assets/img/faces/marc.jpg" />
                          </a>
                      </div>
                      <div class="card-body">
                          <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                         <h4 class="card-title">Alec Thompson</h4>
+                         <input matInput name="nom" class="card-title"  [(ngModel)]="candidat.nom+' '+candidat.prenom"  placeholder="Nom"  placeholder="Prenom" required type="text">
+
                          <p class="card-description">
-                             Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                             Un candidat coopté , est par la suite , beaucoup plus investi et fidèle à l'entreprise !
                          </p>
-                         <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
+                         <span *ngIf="loading">{{loading}}%</span>
+                         <label mat-raised-button for="files" class="btn btn-danger btn-round">Ajouter image</label>
+                         <input type="file" id="files1" style="visibility:hidden;" (change)="fileChanged1($event)"/>
+                       <!--  <a href="javascript:void(0)" class="btn btn-danger btn-round">Ajouter photo</a> -->
                      </div>
                  </div>
-             </div>-->
+             </div>
+
         </div>
     </div>
 </div>

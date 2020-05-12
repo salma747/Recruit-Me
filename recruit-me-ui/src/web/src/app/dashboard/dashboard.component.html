@@ -421,8 +421,8 @@
                 interval="5000"
                 color="accent"
                 maxWidth="auto"
-                proportion="25"
-                slides="5"
+                proportion="45"
+                slides="3"
                 [loop]="true"
                 [hideArrows]="false"
                 [hideIndicators]="false"
@@ -434,7 +434,7 @@
                 *ngFor="let slide of slides"
                 [image]="slide"
                 overlayColor="#00000040"
-                [hideOverlay]="false"
+                [hideOverlay]="true"
             ></mat-carousel-slide>
         </mat-carousel>
     </div>

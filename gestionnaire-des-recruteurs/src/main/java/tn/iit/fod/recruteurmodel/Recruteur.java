@@ -81,7 +81,7 @@ public class Recruteur {
     }
 
     public void setAdresse(String adresse) {
-        adresse = adresse;
+        this.adresse = adresse;
     }
 
     public String getPosteActuel() {
@@ -89,7 +89,7 @@ public class Recruteur {
     }
 
     public void setPosteActuel(String posteActuel) {
-        posteActuel = posteActuel;
+        this.posteActuel = posteActuel;
     }
 
 //    public Recruteur(String id, String nomUtilisateur, String adresseEmail, String motpasse, String nom, String prenom, String dateNaissance, String adresse, String posteActuel) {
