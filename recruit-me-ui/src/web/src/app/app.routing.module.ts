@@ -20,6 +20,10 @@ import {CandidatGuard} from "./core/guards/candidat/candidat.guard";
 import {ResponsableRH} from "./core/models/responsableRH";
 import {ResponsableRHGuard} from "./core/guards/responsable-rh/responsable-rh.guard";
 
+import { AddTestComponent } from './modules/test-technique-r/add-test/add-test.component';
+import { ListTestComponent } from './modules/test-technique-r/list-test/list-test.component';
+import { UpdateTestComponent } from './modules/test-technique-r/update-test/update-test.component';
+
 // @ts-ignore
 const routes: Routes =[
   {path: 'login', component: LoginComponent},
@@ -39,7 +43,8 @@ const routes: Routes =[
           {path: 'candidats', loadChildren: () => import('./modules/candidat/candidat.module').then(m => m.CandidatModule),canActivate: [RecruteurGuard]},
           {path: 'recruteur', loadChildren: () => import('./modules/recruteur/recruteur.module').then(m => m.RecruteurModule), canActivate: [ResponsableRHGuard]},
           {path: 'responsable-rh', loadChildren: () => import('./modules/responsable-rh/responsable-rh.module').then(m => m.ResponsableRHModule), canActivate: [ResponsableRHGuard] },
-          {path: 'test', loadChildren: () => import('./modules/test-technique/test-technique.module').then(m => m.TestTechniqueModule), canActivate: [CandidatGuard] }
+          {path: 'test-technique', loadChildren: () => import('./modules/test-technique/test-technique.module').then(m => m.TestTechniqueModule), canActivate: [CandidatGuard] },
+          {path: 'tests-techniques', loadChildren: () => import('./modules/test-technique-r/test-technique-r.module').then(m => m.TestTechniqueRModule), canActivate: [RecruteurGuard] }
     ]},
 ];
 

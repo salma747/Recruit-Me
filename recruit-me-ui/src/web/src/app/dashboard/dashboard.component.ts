@@ -9,9 +9,11 @@ import * as Chartist from 'chartist';
 export class DashboardComponent implements OnInit {
 
     slides = [
-        "https://dms.licdn.com/video-thumbs/C4D05AQGwKnPOr9_4ug/65cfb3c515e34ac8a3b662eb55f5d249/feedshare-videocover_low-captions-thumbnails/480x270-00001.jpg",
-        "https://www.arondor.com/wp-content/uploads/2019/01/oly_testwow_stage.jpg",
-        "https://test.io/wp-content/uploads/2019/02/testIO-logo-rgb-2.png"
+
+        "https://i.ytimg.com/vi/q8nR4_QDEkE/maxresdefault.jpg",
+        "https://i0.wp.com/doingbuzz.com/wp-content/uploads/2018/07/recrutement-1500x630.jpg",
+        "https://www.travailler-a-domicile.fr/wp-content/uploads/2016/08/devenir-redacteur-web.jpeg",
+
     ];
   constructor() { }
   ngOnInit() {

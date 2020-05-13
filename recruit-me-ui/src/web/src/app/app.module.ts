@@ -21,6 +21,9 @@ import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { AddTestComponent } from './modules/test-technique-r/add-test/add-test.component';
+import { ListTestComponent } from './modules/test-technique-r/list-test/list-test.component';
+import { UpdateTestComponent } from './modules/test-technique-r/update-test/update-test.component';
 
 import { AppComponent } from './app.component';
 
@@ -76,7 +79,7 @@ import {ResponsableRHGuard} from "./core/guards/responsable-rh/responsable-rh.gu
     //TableListComponent,
     //AddRecruteursComponent,
     AdminLayoutComponent,
-      DashboardComponent
+    DashboardComponent
     //AddResprhComponent,
     //ListRecruteursComponent,
     //ListResprhComponent,

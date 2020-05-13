@@ -47,11 +47,11 @@ public class RecruteurController {
 
     @PutMapping("{id}")
     public Recruteur updateRecruteur(@PathVariable String id, @RequestBody Recruteur recruteur) {
+        repository.findById(id).ifPresent(old -> recruteur.setMotpasse(old.getMotpasse()));
         recruteur.setId(id);
-        recruteur.setMotpasse(passwordEncoder.encode(recruteur.getMotpasse()));
-
         return repository.save(recruteur);
     }
+
 //    @PutMapping("{id}")
 //    public Recruteur updateRecruteur(@PathVariable Integer id,@RequestBody Recruteur recruteur){
 //        Optional<Recruteur> std= repository.findById(id);

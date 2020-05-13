@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ResponsableRH } from '../../../core/models/responsableRH';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ResprhService} from "../../../core/services/resprh-service/resprh.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {RecruteurService} from "../../../core/services/recruteur-service/recruteur.service";
 
 @Component({
   selector: 'app-update-resprh',
@@ -12,9 +14,11 @@ export class UpdateResprhComponent implements OnInit {
 
   id: number;
   resprh: ResponsableRH;
+  submitted = false;
+  loading = undefined;
 
   constructor(private route: ActivatedRoute,private router: Router,
-              private resprhService: ResprhService) { }
+              private resprhService: ResprhService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.resprh = new ResponsableRH();
@@ -33,6 +37,9 @@ export class UpdateResprhComponent implements OnInit {
           console.log(data);
           this.resprh = new ResponsableRH();
           this.gotoList();
+            this._snackBar.open("utilisateur modifié", "OK", {
+                duration: 2000,
+            });
         }, error => console.log(error));
 
   }

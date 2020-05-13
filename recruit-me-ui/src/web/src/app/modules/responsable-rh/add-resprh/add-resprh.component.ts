@@ -13,6 +13,7 @@ export class AddResprhComponent implements OnInit {
 
   responsableRH: ResponsableRH = new ResponsableRH();
   submitted = false;
+  viewPassword = false;
 
   constructor(private responsableService: ResprhService,
               private router: Router) {
@@ -35,12 +36,18 @@ export class AddResprhComponent implements OnInit {
 
   }
 
-  onSubmit() {
+  onSubmit(form) {
+    if(form.invalid) {
+      return;
+    }
     this.submitted = true;
     this.add();
   }
 
   gotoList() {
     this.router.navigate(['/responsable-rh']);
+  }
+  toggleViewPassword() {
+    this.viewPassword = !this.viewPassword;
   }
 }

@@ -55,8 +55,8 @@ public class CandidatController {
 
     @PutMapping("{id}")
     public Candidat updateCandidat(@PathVariable String id, @RequestBody Candidat candidat) {
+        repository.findById(id).ifPresent(old -> candidat.setMotpasse(old.getMotpasse()));
         candidat.setId(id);
-        candidat.setMotpasse(passwordEncoder.encode(candidat.getMotpasse()));
         return repository.save(candidat);
     }
 

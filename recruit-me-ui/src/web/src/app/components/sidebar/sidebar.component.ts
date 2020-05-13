@@ -11,12 +11,13 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
    // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
    // { path: '/user-profile', title: 'Ajout CandidatModel',  icon:'person', class: '' },
-    { path: '/candidats', title: 'Gestion Des Candidats',  icon:'person', class: '', role: ["ROLE_RESPONSABLE_RH","ROLE_RECRUTEUR"] },
+    { path: '/candidats', title: 'Gestion Des Candidats',  icon:'group', class: '', role: ["ROLE_RESPONSABLE_RH","ROLE_RECRUTEUR"] },
     // { path: '/add-recruteur', title: 'Ajout Recruteur',  icon:'person', class: '' },
     { path: '/recruteur', title: 'Gestion Des Recruteurs',  icon:'event_note', class: '', role: ["ROLE_RESPONSABLE_RH"] },
    // { path: '/add-resprh', title: 'Ajout Responsable RH',  icon:'person', class: '' },
-    { path: '/responsable-rh', title: 'Gestion Des ResponsablesRH',  icon:'group', class: '', role: ["ROLE_RESPONSABLE_RH"] },
-    { path: '/test', title: 'Gestion Des Test technique',  icon:'list_alt', class: '', role: ["ROLE_CANDIDAT"] },
+    { path: '/responsable-rh', title: 'Gestion Des ResponsablesRH',  icon:'person', class: '', role: ["ROLE_RESPONSABLE_RH"] },
+    { path: '/test-technique', title: 'Assistance Au Test technique',  icon:'list_alt', class: '', role: ["ROLE_CANDIDAT"] },
+    { path: '/tests-techniques', title: 'Gestion Des Tests techniques',  icon:'list_alt', class: '', role: ["ROLE_RECRUTEUR"] },
     //{ path: '/responsable-rh', title: 'Gestion Des ResponsablesRH',  icon:'content_paste', class: '', role: ["ROLE_RESPONSABLE_RH"] },
 
     //{ path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },

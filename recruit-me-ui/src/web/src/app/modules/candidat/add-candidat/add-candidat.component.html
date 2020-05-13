@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput name="motpasse" [(ngModel)]="candidat.motpasse"  placeholder="Mot de passe" required [type]="viewPassword ? 'text' : 'password'" >
+                                        <input matInput name="motpasse" [(ngModel)]="candidat.motpasse"  placeholder="Mot de passe" required [type]="viewPassword ? 'text' : 'password'">
                                         <button matSuffix mat-icon-button (click)="toggleViewPassword()"><mat-icon>{{viewPassword ? 'visibility_off' : 'visibility'}}</mat-icon></button>
                                     </mat-form-field>
                                 </div>
@@ -110,7 +110,7 @@
                          <input matInput name="nom" class="card-title"  [(ngModel)]="candidat.nom+' '+candidat.prenom"  placeholder="Nom"  placeholder="Prenom" required type="text">
 
                          <p class="card-description">
-                             Un candidat coopté , est par la suite , beaucoup plus investi et fidèle à l'entreprise !
+                             Quand vous cherchez des gens à recruter, vous devez chercher trois qualités: l'intégrité, l'intelligence et l'énergie !
                          </p>
                          <span *ngIf="loading">{{loading}}%</span>
                          <label mat-raised-button for="files" class="btn btn-danger btn-round">Ajouter image</label>

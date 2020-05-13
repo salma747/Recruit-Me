@@ -8,7 +8,7 @@
                         <p class="card-category">Ajouter les informations d'un nouveau responsable RH</p>
                     </div>
                     <div class="card-body">
-                        <form (submit)="onSubmit()">
+                        <form (submit)="onSubmit(addUserForm)" #addUserForm="ngForm">
                             <div class="row">
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
@@ -22,7 +22,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput name="motpasse" [(ngModel)]="responsableRH.motpasse" placeholder="Mot de passe" required type="password">
+                                        <input matInput name="motpasse" [(ngModel)]="responsableRH.motpasse" placeholder="Mot de passe" required [type]="viewPassword ? 'text' : 'password'">
+                                        <button matSuffix mat-icon-button (click)="toggleViewPassword()"><mat-icon>{{viewPassword ? 'visibility_off' : 'visibility'}}</mat-icon></button>
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -67,7 +68,7 @@
                                  </div>
                              </div>-->
 
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Ajouter Responsable RH</button>
+                            <button mat-raised-button type="submit"  [disabled]="addUserForm.invalid" class="btn btn-danger pull-right">Ajouter Responsable RH</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -84,7 +85,7 @@
                         <h6 class="card-category text-gray">CEO / Co-Founder</h6>
                         <h4 class="card-title">Alec Thompson</h4>
                         <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        Les meilleures choses qui arrivent dans le monde de l'entreprise ne sont pas le résultat du travail d'un seul homme, c'est le travail de toute une équipe !
                         </p>
                         <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
                     </div>

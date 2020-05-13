@@ -12,6 +12,7 @@ export class AddRecruteursComponent implements OnInit {
 
   recruteur: Recruteur = new Recruteur();
   submitted = false;
+  viewPassword = false;
 
   constructor(private recruteurService: RecruteurService,
               private router: Router) {
@@ -35,12 +36,18 @@ export class AddRecruteursComponent implements OnInit {
 
   }
 
-  onSubmit() {
+  onSubmit(form) {
+    if(form.invalid) {
+      return;
+    }
     this.submitted = true;
     this.add();
   }
 
   gotoList() {
     this.router.navigate(['/recruteur']);
+  }
+  toggleViewPassword() {
+    this.viewPassword = !this.viewPassword;
   }
 }

@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <button [routerLink]="['/tests-techniques/new']"  mat-raised-button >Ajouter test technique</button>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des tests techniques</h4>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Chercher des questions.."> <!--[type]="filter : 'text'">
+                         <button matSuffix mat-icon-button ><mat-icon>{{filter ? '' : 'search'}}</mat-icon></button> -->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-secondary">
+                                <th>Question :</th>
+                                <th width="200px">Action</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button class="action-button" mat-mini-fab color="accent" [routerLink]="['/tests-techniques/update']" mat-icon-button ><mat-icon>edit</mat-icon></button>
+                                        <button class="action-button" mat-mini-fab color="warn"  ><mat-icon>delete</mat-icon> </button>
+
+                                    </td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

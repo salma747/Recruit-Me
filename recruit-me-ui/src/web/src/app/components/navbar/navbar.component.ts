@@ -30,9 +30,12 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn = true;
         console.log('menu ->' + this.isLoggedIn);
       this.listTitles = ROUTES.filter(listTitle => listTitle);
-      this.listTitles.push({ path: '/candidats/new', title: 'Ajout Candidat'});
-      this.listTitles.push({ path: '/recruteur/new', title: 'Ajout Recruteur'});
-      this.listTitles.push({ path: '/responsable-rh/new', title: 'Ajout ResponsableRH'});
+      this.listTitles.push({ path: '/candidats/new', title: 'Ajout De Candidat'});
+      this.listTitles.push({ path: '/recruteur/new', title: 'Ajout De Recruteur'});
+      this.listTitles.push({ path: '/responsable-rh/new', title: 'Ajout De ResponsableRH'});
+        this.listTitles.push({ path: '/tests-techniques/new', title: 'Ajout De Test Technique'});
+       // this.listTitles.push({ path: '/test-technique', title: 'Passer Du Test Technique'});
+        this.listTitles.push({ path: '/tests-techniques/update', title: 'Modification De Test Technique'});
       //this.listTitles.push({ path: '/candidats/update', title: 'Modification Du Candidat'});
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];

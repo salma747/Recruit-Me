@@ -1,0 +1,83 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajouter une question au test technique</h4>
+                    </div>
+                    <div class="card-body">
+                        <form #addUserForm="ngForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput name="question" placeholder="Question" required type="text">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput name="contexte"  placeholder="Contexte" required type="text">
+                                    </mat-form-field>
+                                </div>
+                                <br>
+                                <div>
+                              <label>Spécialité :</label>
+
+
+                                <select name="pets" id="pet-select">
+                                    <option value="">--Choisir une spécialité--</option>
+                                    <option value="jee">JEE</option>
+                                    <option value=".net">.NET</option>
+                                    <option value="bigData">BIG DATA</option>
+                                    <option value="BI">BI</option>
+                                    <option value="IOT">IOT</option>
+                                    <option value="consultantERP">CONSULTING ERP</option>
+                                    <option value="intelligenceArtificielle">INTELLIGENCE ARTIFICIELLE</option>
+                                </select>
+
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <label>Difficulté :</label>
+                                    <div>
+                                        <input type="radio" id="contactChoice1"
+                                               name="facile" value="facile">
+                                        <label for="contactChoice1">Facile</label>
+                                        <input type="radio" id="contactChoice2"
+                                               name="moyen" value="moyen">
+                                        <label for="contactChoice2">Moyen</label>
+                                        <input type="radio" id="contactChoice3"
+                                               name="difficile" value="difficile">
+                                        <label for="contactChoice3">Difficile</label>
+                                    </div>
+
+                            </div>
+                            </div>
+                            <!-- <div class="row">
+                                 <div class="col-md-12">
+                                     <label></label>
+                                     <mat-form-field class="example-full-width">
+                                         <textarea matInput placeholder=""></textarea>
+                                     </mat-form-field>
+                                     <div class="form-group">
+
+                                         <div class="form-group">
+                                             <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                                             <textarea class="form-control" rows="5"></textarea>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>-->
+
+                            <button mat-raised-button type="reset" [disabled]="addUserForm.invalid" class="btn btn-danger pull-right">Annuler</button>
+                            <button mat-raised-button type="submit" [disabled]="addUserForm.invalid" class="btn btn-danger pull-right">Ajouter Question</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+            </div>
+

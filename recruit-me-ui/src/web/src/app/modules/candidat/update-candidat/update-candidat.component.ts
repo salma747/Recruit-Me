@@ -14,8 +14,8 @@ export class UpdateCandidatComponent implements OnInit {
 
   id: number;
   candidat: Candidat;
-    submitted = false;
-    loading = undefined;
+  submitted = false;
+  loading = undefined;
 
   constructor(private route: ActivatedRoute,private router: Router,
               private candidatService: CandidatService, private _snackBar: MatSnackBar) { }

@@ -16,6 +16,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatDialogModule} from "@angular/material/dialog";
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
@@ -34,7 +37,11 @@ import {MatButtonModule} from "@angular/material/button";
       MatFormFieldModule,
       MatInputModule,
       MatIconModule,
-      MatButtonModule
+      MatButtonModule,
+      MatSnackBarModule,
+      MatDialogModule,
+      SharedModule
+
   ]
 })
 export class ResponsableRHModule { }

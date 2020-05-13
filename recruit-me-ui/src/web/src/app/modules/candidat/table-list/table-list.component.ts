@@ -62,7 +62,7 @@ export class TableListComponent implements OnInit {
         const nomUtilisateur = this.candidats.filter(candidat => candidat.id === id)[0].nomUtilisateur;
         const dialogRef = this.dialog.open(YesOrNOComponent, {
             width: '250px',
-            data: {message: `you want to delete ${nomUtilisateur} ?`}
+            data: {message: `Voulez vous supprimer ${nomUtilisateur} ?`}
         });
 
         dialogRef.afterClosed().subscribe(result => {
