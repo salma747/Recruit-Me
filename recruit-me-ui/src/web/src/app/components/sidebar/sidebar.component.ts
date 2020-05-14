@@ -47,7 +47,9 @@ export class SidebarComponent implements OnInit {
   };
   canView(menu: RouteInfo) {
       const user = JSON.parse(localStorage.getItem("login"));
-
+      if(!user) {
+          return false;
+      }
       user.authorities = user.authorities.map(role => role.authority);
       const value = menu.role.find(role => user.authorities.indexOf(role) >= 0);
       console.log(value);

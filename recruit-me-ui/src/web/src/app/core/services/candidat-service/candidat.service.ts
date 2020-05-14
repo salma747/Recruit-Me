@@ -36,12 +36,12 @@ export class CandidatService {
   }
 
   uploadFile(file): Observable<any> {
+    console.log("here 6")
+    console.log(file)
     let formData = new FormData();
     formData.append('file', file);
     return this.http
         .post(`${this.baseUrl}/upload`, formData,
-            { responseType : 'text',reportProgress: true,observe: 'events', headers : {
-                "Content-Type": undefined
-      }});
+            { responseType : 'text', reportProgress: true,observe: 'events'});
   }
 }

@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">Ajouter un candidat</h4>
@@ -95,30 +95,27 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+          <!--  <div class="col-md-4">
                  <div class="card card-profile">
                      <div class="card-avatar">
                          <a href="javascript:void(0)">
                              <ng-container *ngIf="candidat.photo">
                                 <a class="img" [href]="downloadUrl+candidat.photo" download></a>
                              </ng-container>
-                             <img class="img" src="./assets/img/faces/marc.jpg" />
+                             <img class="img" [src]="url" />
                          </a>
                      </div>
                      <div class="card-body">
-                         <h6 class="card-category text-gray">CEO / Co-Founder</h6>
                          <input matInput name="nom" class="card-title"  [(ngModel)]="candidat.nom+' '+candidat.prenom"  placeholder="Nom"  placeholder="Prenom" required type="text">
 
                          <p class="card-description">
                              Quand vous cherchez des gens à recruter, vous devez chercher trois qualités: l'intégrité, l'intelligence et l'énergie !
                          </p>
-                         <span *ngIf="loading">{{loading}}%</span>
-                         <label mat-raised-button for="files" class="btn btn-danger btn-round">Ajouter image</label>
+                         <label mat-raised-button for="files1" class="btn btn-danger btn-round">Ajouter image</label>
                          <input type="file" id="files1" style="visibility:hidden;" (change)="fileChanged1($event)"/>
-                       <!--  <a href="javascript:void(0)" class="btn btn-danger btn-round">Ajouter photo</a> -->
                      </div>
                  </div>
-             </div>
+             </div>  -->
 
         </div>
     </div>

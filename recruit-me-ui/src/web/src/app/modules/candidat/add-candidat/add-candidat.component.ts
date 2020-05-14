@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {FormBuilder} from "@angular/forms";
 import {HttpEventType} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
+import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 @Component({
   selector: 'app-add-candidat',
   templateUrl: './add-candidat.component.html',
@@ -16,10 +17,12 @@ export class AddCandidatComponent implements OnInit {
   loading = undefined;
   downloadUrl = environment.baseUrlCandidat+'candidats/file/';
   viewPassword = false;
+  private url: SafeUrl = './assets/img/faces/marc.jpg';
 
   constructor(private candidatService: CandidatService,
               private formBuilder: FormBuilder,
-              private router: Router) {
+              private router: Router,
+              private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
@@ -75,7 +78,9 @@ export class AddCandidatComponent implements OnInit {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
-      reader.onload = () => {
+      reader.onload = (file) => {
+        const url = window.URL.createObjectURL(new Blob([file.target.result], {type: 'image/png'}));
+        this.url = this.sanitizer.bypassSecurityTrustUrl(url);
         this.candidatService.uploadFile(event.target.files[0]).subscribe(value => {
           if (value.type === HttpEventType.UploadProgress) {
             this.loading = 100 * value.loaded / value.total;
